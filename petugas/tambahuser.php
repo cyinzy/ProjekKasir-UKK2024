@@ -19,7 +19,7 @@
                             <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="Password">
                         </div>
                         <div class="mb-3">
-                            <label for="level" class="form-label">Password:</label>
+                            <label for="level" class="form-label">Level:</label>
                             <select name="level" id="level" class="form-control">
                                 <option value=""></option>
                                 <option value="Administrator">Administrator</option>

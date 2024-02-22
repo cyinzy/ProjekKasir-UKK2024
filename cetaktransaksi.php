@@ -28,7 +28,7 @@ include("header.php");
                 echo "<td>" . $row['TanggalPenjualan'] . "</td>";
                 ?>
                 <td>
-                  <?php
+                  <?php 
                   $query1 = "SELECT NamaPelanggan FROM pelanggan WHERE PelangganID = '".$row['PenjualanID']."'";
                   $result1 = mysqli_query($con, $query1);
                   
@@ -67,17 +67,18 @@ include("header.php");
                                 }
 
                                 echo "<td>" . $detailrow['JumlahProduk'] . " Pcs</td>";
-                                echo "<td>RP." . $detailrow['Subtotal'] . "</td>";
+                                echo "<td>RP." . number_format($detailrow['Subtotal']) . ",00</td>";
                                 echo "</tr>";
 
                                 // Tambahkan Subtotal ke total harga
-                                $totalHarga += $detailrow['Subtotal'];
+                                $totalproduk = $detailrow['JumlahProduk'] *  $detailrow['Subtotal'];
+                                $totalHarga += $totalproduk;
                             }
 
                             // Menampilkan total harga di luar loop
                             echo "<tr>";
                             echo "<td colspan='2'><strong>Total Harga:</strong></td>";
-                            echo "<td colspan='2'><strong>RP." . $totalHarga . ",00</strong></td>";
+                            echo "<td colspan='3'><strong>RP." . number_format($totalHarga) . ",00</strong></td>";
                             echo "</tr>";
                         ?>
                             

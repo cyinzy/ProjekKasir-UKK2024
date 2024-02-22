@@ -3,7 +3,7 @@ $server = "localhost";
 $username = "root";
 $password = "";
 $database = "kasir";
-$con= new mysqli ($server,$username,$password,$database);
+$con = new mysqli ($server,$username,$password,$database);
 
 
 if (!$con) {
